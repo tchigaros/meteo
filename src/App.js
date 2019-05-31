@@ -116,11 +116,11 @@ class App extends React.Component {
     const data2 = await api_call2.json();
 
    // use the first data for weather informations
-    if (city && country && units=="metric" && type=="weather") {
+    if (city && country && units==="metric" && type==="weather") {
       this.setState({
           city: data2.location.name,
           country: data2.location.country,
-          date:"Today",
+          date:"Now",
           temperature: data2.current.temp_c,
           temperature_min: data2.current.temp_c,
           temperature_max: data2.current.temp_c,
@@ -134,7 +134,7 @@ class App extends React.Component {
 
       
     } 
-    else if (city && country && units=="imperial" && type=="weather") {
+    else if (city && country && units==="imperial" && type==="weather") {
       this.setState({
           city: data2.location.name,
           country: data2.location.country,
@@ -151,7 +151,7 @@ class App extends React.Component {
       });
 
       // use the second data for forecat informations
-    }else if(city && country && units=="metric" && type=="forecast"){
+    }else if(city && country && units==="metric" && type==="forecast"){
        this.setState({
         city: data2.location.name,
         country: data2.location.country,
@@ -165,7 +165,7 @@ class App extends React.Component {
         date7:data2.forecast.forecastday[6].date.substring(5),
         
 
-        temperature: data.list[0].main.temp,
+        temperature: data2.current.temp_c,
 
 
         temperature_max1: data2.forecast.forecastday[0].day.maxtemp_c,
@@ -222,7 +222,7 @@ class App extends React.Component {
         error: "",
         });
     }
-    else if(city && country && units=="imperial" && type=="forecast"){
+    else if(city && country && units==="imperial" && type==="forecast"){
        this.setState({
         city: data2.location.name,
         country: data2.location.country,
@@ -235,7 +235,7 @@ class App extends React.Component {
         date6:data2.forecast.forecastday[5].date.substring(5),
         date7:data2.forecast.forecastday[6].date.substring(5),
         
-
+        temperature: data2.current.temp_f,
 
         temperature_max1: data2.forecast.forecastday[0].day.maxtemp_f,
         temperature_min1: data2.forecast.forecastday[0].day.mintemp_f,
@@ -368,7 +368,7 @@ class App extends React.Component {
     }
   }
   render() {
-    
+
    
     return (
      

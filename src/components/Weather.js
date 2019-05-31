@@ -2,7 +2,7 @@ import React from "react";
 
 const Weather = props => (
 	
-	<div className="weather__info">
+	<div className="weather__info" id="weather_table">
 	{ 
 	 	props.error && <p className="weather__error">{ props.error }</p>  
 	 }
