@@ -25,6 +25,7 @@ class App extends React.Component {
     date7: undefined,
 
     description: undefined,
+    icona:undefined,
     iconurl:undefined,
     description1: undefined,
     iconurl1:undefined,
@@ -128,14 +129,15 @@ class App extends React.Component {
           country: data2.sys.country,
           date:"Now",
           temperature: data2.main.temp,
-          temperature_min: data2.main.temp,
-          temperature_max: data2.main.temp,
+          temperature_min: data2.main.temp_min,
+          temperature_max: data2.main.temp_max,
          
-          wind_speed:data2.wind.speed,
+          wind_speed:data2.wind.speed + "km/h",
           humidity: data2.main.humidity,
           pressure: data2.main.pressure,
           description: data2.weather[0].description,
-          iconurl:data2.weather[0].icon,
+          icona:data2.weather[0].icon,
+          iconurl:`https://openweathermap.org/img/wn/${icona}@2x.png`,
           error: "",
       });
 
@@ -143,18 +145,19 @@ class App extends React.Component {
     } 
     else if (city && country && units==="imperial" && type==="weather") {
       this.setState({
-           city: data2.name,
+          city: data2.name,
           country: data2.sys.country,
           date:"Now",
           temperature: data2.main.temp,
           temperature_min: data2.main.temp_min,
           temperature_max: data2.main.temp_max,
          
-          wind_speed:data2.wind.speed,
+          wind_speed:data2.wind.speed + "mph",
           humidity: data2.main.humidity,
           pressure: data2.main.pressure,
           description: data2.weather[0].description,
-          iconurl:data2.weather[0].icon,
+          icona:data2.weather[0].icon,
+          iconurl:`https://openweathermap.org/img/wn/${icona}@2x.png`,
           error: "",
       });
 
@@ -313,6 +316,7 @@ class App extends React.Component {
         date7: undefined,
 
         description: undefined,
+        icona:undefined,
         iconurl:undefined,
         description1: undefined,
         iconurl1:undefined,
@@ -443,6 +447,7 @@ class App extends React.Component {
                     
 
                     description={this.state.description}
+                    icona={this.state.icona}
                     iconurl={this.state.iconurl}
                     description1={this.state.description1}
                     iconurl1={this.state.iconurl1}
