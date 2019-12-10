@@ -137,7 +137,7 @@ class App extends React.Component {
           pressure: data2.main.pressure,
           description: data2.weather[0].description,
           icona:data2.weather[0].icon,
-          iconurl:`https://openweathermap.org/img/wn/${icona}@2x.png`,
+          iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
           error: "",
       });
 
@@ -157,7 +157,7 @@ class App extends React.Component {
           pressure: data2.main.pressure,
           description: data2.weather[0].description,
           icona:data2.weather[0].icon,
-          iconurl:`https://openweathermap.org/img/wn/${icona}@2x.png`,
+          iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
           error: "",
       });
 
