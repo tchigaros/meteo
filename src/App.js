@@ -143,17 +143,18 @@ class App extends React.Component {
     } 
     else if (city && country && units==="imperial" && type==="weather") {
       this.setState({
-          city: data2.location.name,
-          country: data2.location.country,
-          date:"Today",
-          temperature: data2.current.temp_f,
-          temperature_min: data2.current.temp_f,
-          temperature_max: data2.current.temp_f,
+           city: data2.name,
+          country: data2.sys.country,
+          date:"Now",
+          temperature: data2.main.temp,
+          temperature_min: data2.main.temp_min,
+          temperature_max: data2.main.temp_max,
          
-          wind_speed:data2.current.wind_kph + " " + data2.current.wind_dir,
-          humidity: data2.current.humidity,
-          description: data2.current.condition.text,
-          iconurl:data2.current.condition.icon,
+          wind_speed:data2.wind.speed,
+          humidity: data2.main.humidity,
+          pressure: data2.main.pressure,
+          description: data2.weather[0].description,
+          iconurl:data2.weather[0].icon,
           error: "",
       });
 
