@@ -7,6 +7,8 @@ import Weather from "./components/new_Weather";
 //app key for apixu : 81b709f9eb39487c9e330501192705
 const API_KEY = "ebb254aec4c1b763f1509526830d2c3c";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
+const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
+
 class App extends React.Component {
   state = {
 
@@ -109,26 +111,31 @@ class App extends React.Component {
     //   const api_call = await fetch(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
     //  const data = await api_call.json();
     // };
-    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
-    const data = await api_call.json();
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
+    const data2 = await api_call.json();
 
-    const api_call2 = await fetch(`https://api.apixu.com/v1/forecast.json?key=${API_KEY2}&q=${city}&days=7&lang=en`);
-    const data2 = await api_call2.json();
+    // const api_call2 = await fetch(`http://api.apixu.com/v1/forecast.json?key=${API_KEY2}&q=${city}&days=7&lang=en`);
+    // const data2 = await api_call2.json();
+
+
+    const api_call3 = await fetch(`http://api.weatherstack.com/current?access_key=${API_KEY3}&query=${city}`);
+    const data3 = await api_call2.json();
 
    // use the first data for weather informations
     if (city && country && units==="metric" && type==="weather") {
       this.setState({
-          city: data2.location.name,
-          country: data2.location.country,
+          city: data2.name,
+          country: data2.sys.country,
           date:"Now",
-          temperature: data2.current.temp_c,
-          temperature_min: data2.current.temp_c,
-          temperature_max: data2.current.temp_c,
+          temperature: data2.main.temp,
+          temperature_min: data2.main.temp,
+          temperature_max: data2.main.temp,
          
-          wind_speed:data2.current.wind_kph + " " + data2.current.wind_dir,
-          humidity: data2.current.humidity,
-          description: data2.current.condition.text,
-          iconurl:data2.current.condition.icon,
+          wind_speed:data2.wind.speed,
+          humidity: data2.main.humidity,
+          pressure: data2.main.pressure,
+          description: data2.weather[0].description,
+          iconurl:data2.weather[0].icon,
           error: "",
       });
 
