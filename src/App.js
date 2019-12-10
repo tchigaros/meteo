@@ -118,8 +118,8 @@ class App extends React.Component {
     // const data2 = await api_call2.json();
 
 
-    const api_call3 = await fetch(`http://api.weatherstack.com/current?access_key=${API_KEY3}&query=${city}`);
-    const data3 = await api_call2.json();
+    // const api_call3 = await fetch(`http://api.weatherstack.com/current?access_key=${API_KEY3}&query=${city}`);
+    // const data3 = await api_call2.json();
 
    // use the first data for weather informations
     if (city && country && units==="metric" && type==="weather") {
