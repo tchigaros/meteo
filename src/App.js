@@ -8,6 +8,7 @@ import Weather from "./components/new_Weather";
 const API_KEY = "ebb254aec4c1b763f1509526830d2c3c";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
 const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
+const API_KEY4 = "bdef63fe8e024f9b8043b9c4eed80457";//weatherbit
 
 class App extends React.Component {
   state = {
@@ -113,7 +114,11 @@ class App extends React.Component {
     //  const data = await api_call.json();
     // };
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
+    const data3 = await api_call.json();
+
+    const api_call = await fetch(`https://api.weatherbit.io/v2.0/${type}/daily?city=${city},${country}&key=${API_KEY4}&units=${units}&lang=en`);
     const data2 = await api_call.json();
+
 
     // const api_call2 = await fetch(`http://api.apixu.com/v1/forecast.json?key=${API_KEY2}&q=${city}&days=7&lang=en`);
     // const data2 = await api_call2.json();
@@ -125,18 +130,18 @@ class App extends React.Component {
    // use the first data for weather informations
     if (city && country && units==="metric" && type==="weather") {
       this.setState({
-          city: data2.name,
-          country: data2.sys.country,
+          city: data3.name,
+          country: data3.sys.country,
           date:"Now",
-          temperature: data2.main.temp,
-          temperature_min: data2.main.temp_min,
-          temperature_max: data2.main.temp_max,
+          temperature: data3.main.temp,
+          temperature_min: data3.main.temp_min,
+          temperature_max: data3.main.temp_max,
          
-          wind_speed:data2.wind.speed + "km/h",
-          humidity: data2.main.humidity,
-          pressure: data2.main.pressure,
-          description: data2.weather[0].description,
-          icona:data2.weather[0].icon,
+          wind_speed:data3.wind.speed + "km/h",
+          humidity: data3.main.humidity,
+          pressure: data3.main.pressure,
+          description: data3.weather[0].description,
+          icona:data3.weather[0].icon,
           iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
           error: "",
       });
@@ -145,18 +150,18 @@ class App extends React.Component {
     } 
     else if (city && country && units==="imperial" && type==="weather") {
       this.setState({
-          city: data2.name,
-          country: data2.sys.country,
+          city: data3.name,
+          country: data3.sys.country,
           date:"Now",
-          temperature: data2.main.temp,
-          temperature_min: data2.main.temp_min,
-          temperature_max: data2.main.temp_max,
+          temperature: data3.main.temp,
+          temperature_min: data3.main.temp_min,
+          temperature_max: data3.main.temp_max,
          
-          wind_speed:data2.wind.speed + "mph",
-          humidity: data2.main.humidity,
-          pressure: data2.main.pressure,
-          description: data2.weather[0].description,
-          icona:data2.weather[0].icon,
+          wind_speed:data3.wind.speed + "mph",
+          humidity: data3.main.humidity,
+          pressure: data3.main.pressure,
+          description: data3.weather[0].description,
+          icona:data3.weather[0].icon,
           iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
           error: "",
       });
@@ -164,69 +169,69 @@ class App extends React.Component {
       // use the second data for forecat informations
     }else if(city && country && units==="metric" && type==="forecast"){
        this.setState({
-        city: data2.location.name,
-        country: data2.location.country,
+        city: data2.city_name,
+        country: data2.country_code,
 
-        date1:data2.forecast.forecastday[0].date.substring(5),
-        date2:data2.forecast.forecastday[1].date.substring(5),
-        date3:data2.forecast.forecastday[2].date.substring(5),
-        date4:data2.forecast.forecastday[3].date.substring(5),
-        date5:data2.forecast.forecastday[4].date.substring(5),
-        date6:data2.forecast.forecastday[5].date.substring(5),
-        date7:data2.forecast.forecastday[6].date.substring(5),
+        date1:data2.data[0].valid_date.substring(8,10),
+        date2:data2.data[1].valid_date.substring(8,10),
+        date3:data2.data[2].valid_date.substring(8,10),
+        date4:data2.data[3].valid_date.substring(8,10),
+        date5:data2.data[4].valid_date.substring(8,10),
+        date6:data2.data[5].valid_date.substring(8,10),
+        date7:data2.data[6].valid_date.substring(8,10),
         
 
-        temperature: data2.current.temp_c,
+        temperature: data2.data[0].temp,
 
 
-        temperature_max1: data2.forecast.forecastday[0].day.maxtemp_c,
-        temperature_min1: data2.forecast.forecastday[0].day.mintemp_c,
-        temperature_max2: data2.forecast.forecastday[1].day.maxtemp_c,
-        temperature_min2: data2.forecast.forecastday[1].day.mintemp_c,
-        temperature_max3: data2.forecast.forecastday[2].day.maxtemp_c,
-        temperature_min3: data2.forecast.forecastday[2].day.mintemp_c,
-        temperature_max4: data2.forecast.forecastday[3].day.maxtemp_c,
-        temperature_min4: data2.forecast.forecastday[3].day.mintemp_c,
-        temperature_max5: data2.forecast.forecastday[4].day.maxtemp_c,
-        temperature_min5: data2.forecast.forecastday[4].day.mintemp_c,
-        temperature_max6: data2.forecast.forecastday[5].day.maxtemp_c,
-        temperature_min6: data2.forecast.forecastday[5].day.mintemp_c,
-        temperature_max7: data2.forecast.forecastday[6].day.maxtemp_c,
-        temperature_min7: data2.forecast.forecastday[6].day.mintemp_c,
+        temperature_max1: data2.data[0].max_temp,
+        temperature_min1: data2.data[0].min_temp,
+        temperature_max2: data2.data[1].max_temp,
+        temperature_min2: data2.data[1].min_temp,
+        temperature_max3: data2.data[2].max_temp,
+        temperature_min3: data2.data[2].min_temp,
+        temperature_max4: data2.data[3].max_temp,
+        temperature_min4: data2.data[3].min_temp,
+        temperature_max5: data2.data[4].max_temp,
+        temperature_min5: data2.data[4].min_temp,
+        temperature_max6: data2.data[5].max_temp,
+        temperature_min6: data2.data[5].min_temp,
+        temperature_max7: data2.data[6].max_temp,
+        temperature_min7: data2.data[6].min_temp,
 
-        humidity1: data2.forecast.forecastday[0].day.avghumidity,
-        humidity2: data2.forecast.forecastday[1].day.avghumidity,
-        humidity3: data2.forecast.forecastday[2].day.avghumidity,
-        humidity4: data2.forecast.forecastday[3].day.avghumidity,
-        humidity5: data2.forecast.forecastday[4].day.avghumidity,
-        humidity6: data2.forecast.forecastday[5].day.avghumidity,
-        humidity7: data2.forecast.forecastday[6].day.avghumidity,
+        humidity1: data2.data[0].rh,
+        humidity2: data2.data[1].rh,
+        humidity3: data2.data[2].rh,
+        humidity4: data2.data[3].rh,
+        humidity5: data2.data[4].rh,
+        humidity6: data2.data[5].rh,
+        humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.forecast.forecastday[0].day.maxwind_kph,
-        wind_speed2:data2.forecast.forecastday[1].day.maxwind_kph,
-        wind_speed3:data2.forecast.forecastday[2].day.maxwind_kph,
-        wind_speed4:data2.forecast.forecastday[3].day.maxwind_kph,
-        wind_speed5:data2.forecast.forecastday[4].day.maxwind_kph,
-        wind_speed6:data2.forecast.forecastday[5].day.maxwind_kph,
-        wind_speed7:data2.forecast.forecastday[6].day.maxwind_kph,
+        wind_speed1:data2.data[0].wind_spd,
+        wind_speed2:data2.data[1].wind_spd,
+        wind_speed3:data2.data[2].wind_spd,
+        wind_speed4:data2.data[3].wind_spd,
+        wind_speed5:data2.data[4].wind_spd,
+        wind_speed6:data2.data[5].wind_spd,
+        wind_speed7:data2.data[6].wind_spd,
   
 
       
-        description1: data2.forecast.forecastday[0].day.condition.text,        
-        iconurl1:data2.forecast.forecastday[0].day.condition.icon,
-        description2: data2.forecast.forecastday[1].day.condition.text,        
-        iconurl2:data2.forecast.forecastday[1].day.condition.icon,
-        description3: data2.forecast.forecastday[2].day.condition.text,        
-        iconurl3:data2.forecast.forecastday[2].day.condition.icon,
-        description4: data2.forecast.forecastday[3].day.condition.text,        
-        iconurl4:data2.forecast.forecastday[3].day.condition.icon,
-        description5: data2.forecast.forecastday[4].day.condition.text,        
-        iconurl5:data2.forecast.forecastday[4].day.condition.icon,
-        description6: data2.forecast.forecastday[5].day.condition.text,        
-        iconurl6:data2.forecast.forecastday[5].day.condition.icon,
-        description7: data2.forecast.forecastday[6].day.condition.text,        
-        iconurl7:data2.forecast.forecastday[6].day.condition.icon,
+        description1: data2.data[0].weather.description,        
+        iconurl1:data2.data[0].weather.icon,
+        description2: data2.data[1].weather.description,        
+        iconurl2:data2.data[1].weather.icon,
+        description3: data2.data[2].weather.description,        
+        iconurl3:data2.data[2].weather.icon,
+        description4: data2.data[3].weather.description,        
+        iconurl4:data2.data[3].weather.icon,
+        description5: data2.data[4].weather.description,        
+        iconurl5:data2.data[4].weather.icon,
+        description6: data2.data[5].weather.description,        
+        iconurl6:data2.data[5].weather.icon,
+        description7: data2.data[6].weather.description,        
+        iconurl7:data2.data[6].weather.icon,
        
 
 
@@ -235,70 +240,69 @@ class App extends React.Component {
     }
     else if(city && country && units==="imperial" && type==="forecast"){
        this.setState({
-        city: data2.location.name,
-        country: data2.location.country,
+        city: data2.city_name,
+        country: data2.country_code,
 
-        date1:data2.forecast.forecastday[0].date.substring(5),
-        date2:data2.forecast.forecastday[1].date.substring(5),
-        date3:data2.forecast.forecastday[2].date.substring(5),
-        date4:data2.forecast.forecastday[3].date.substring(5),
-        date5:data2.forecast.forecastday[4].date.substring(5),
-        date6:data2.forecast.forecastday[5].date.substring(5),
-        date7:data2.forecast.forecastday[6].date.substring(5),
+        date1:data2.data[0].valid_date.substring(8,10),
+        date2:data2.data[1].valid_date.substring(8,10),
+        date3:data2.data[2].valid_date.substring(8,10),
+        date4:data2.data[3].valid_date.substring(8,10),
+        date5:data2.data[4].valid_date.substring(8,10),
+        date6:data2.data[5].valid_date.substring(8,10),
+        date7:data2.data[6].valid_date.substring(8,10),
         
-        temperature: data2.current.temp_f,
 
-        temperature_max1: data2.forecast.forecastday[0].day.maxtemp_f,
-        temperature_min1: data2.forecast.forecastday[0].day.mintemp_f,
-        temperature_max2: data2.forecast.forecastday[1].day.maxtemp_f,
-        temperature_min2: data2.forecast.forecastday[1].day.mintemp_f,
-        temperature_max3: data2.forecast.forecastday[2].day.maxtemp_f,
-        temperature_min3: data2.forecast.forecastday[2].day.mintemp_f,
-        temperature_max4: data2.forecast.forecastday[3].day.maxtemp_f,
-        temperature_min4: data2.forecast.forecastday[3].day.mintemp_f,
-        temperature_max5: data2.forecast.forecastday[4].day.maxtemp_f,
-        temperature_min5: data2.forecast.forecastday[4].day.mintemp_f,
-        temperature_max6: data2.forecast.forecastday[5].day.maxtemp_f,
-        temperature_min6: data2.forecast.forecastday[5].day.mintemp_f,
-        temperature_max7: data2.forecast.forecastday[6].day.maxtemp_f,
-        temperature_min7: data2.forecast.forecastday[6].day.mintemp_f,
+        temperature: data2.data[0].temp,
+
+
+        temperature_max1: data2.data[0].max_temp,
+        temperature_min1: data2.data[0].min_temp,
+        temperature_max2: data2.data[1].max_temp,
+        temperature_min2: data2.data[1].min_temp,
+        temperature_max3: data2.data[2].max_temp,
+        temperature_min3: data2.data[2].min_temp,
+        temperature_max4: data2.data[3].max_temp,
+        temperature_min4: data2.data[3].min_temp,
+        temperature_max5: data2.data[4].max_temp,
+        temperature_min5: data2.data[4].min_temp,
+        temperature_max6: data2.data[5].max_temp,
+        temperature_min6: data2.data[5].min_temp,
+        temperature_max7: data2.data[6].max_temp,
+        temperature_min7: data2.data[6].min_temp,
+
+        humidity1: data2.data[0].rh,
+        humidity2: data2.data[1].rh,
+        humidity3: data2.data[2].rh,
+        humidity4: data2.data[3].rh,
+        humidity5: data2.data[4].rh,
+        humidity6: data2.data[5].rh,
+        humidity7: data2.data[6].rh,
+
       
-
-        humidity1: data2.forecast.forecastday[0].day.avghumidity,
-        humidity2: data2.forecast.forecastday[1].day.avghumidity,
-        humidity3: data2.forecast.forecastday[2].day.avghumidity,
-        humidity4: data2.forecast.forecastday[3].day.avghumidity,
-        humidity5: data2.forecast.forecastday[4].day.avghumidity,
-        humidity6: data2.forecast.forecastday[5].day.avghumidity,
-        humidity7: data2.forecast.forecastday[6].day.avghumidity,
-
-      
-        wind_speed1:data2.forecast.forecastday[0].day.maxwind_kph,
-        wind_speed2:data2.forecast.forecastday[1].day.maxwind_kph,
-        wind_speed3:data2.forecast.forecastday[2].day.maxwind_kph,
-        wind_speed4:data2.forecast.forecastday[3].day.maxwind_kph,
-        wind_speed5:data2.forecast.forecastday[4].day.maxwind_kph,
-        wind_speed6:data2.forecast.forecastday[5].day.maxwind_kph,
-        wind_speed7:data2.forecast.forecastday[6].day.maxwind_kph,
+        wind_speed1:data2.data[0].wind_spd,
+        wind_speed2:data2.data[1].wind_spd,
+        wind_speed3:data2.data[2].wind_spd,
+        wind_speed4:data2.data[3].wind_spd,
+        wind_speed5:data2.data[4].wind_spd,
+        wind_speed6:data2.data[5].wind_spd,
+        wind_speed7:data2.data[6].wind_spd,
   
-       
-    
 
-        
-        description1: data2.forecast.forecastday[0].day.condition.text,        
-        iconurl1:data2.forecast.forecastday[0].day.condition.icon,
-        description2: data2.forecast.forecastday[1].day.condition.text,        
-        iconurl2:data2.forecast.forecastday[1].day.condition.icon,
-        description3: data2.forecast.forecastday[2].day.condition.text,        
-        iconurl3:data2.forecast.forecastday[2].day.condition.icon,
-        description4: data2.forecast.forecastday[3].day.condition.text,        
-        iconurl4:data2.forecast.forecastday[3].day.condition.icon,
-        description5: data2.forecast.forecastday[4].day.condition.text,        
-        iconurl5:data2.forecast.forecastday[4].day.condition.icon,
-        description6: data2.forecast.forecastday[5].day.condition.text,        
-        iconurl6:data2.forecast.forecastday[5].day.condition.icon,
-        description7: data2.forecast.forecastday[6].day.condition.text,        
-        iconurl7:data2.forecast.forecastday[6].day.condition.icon,
+      
+        description1: data2.data[0].weather.description,        
+        iconurl1:data2.data[0].weather.icon,
+        description2: data2.data[1].weather.description,        
+        iconurl2:data2.data[1].weather.icon,
+        description3: data2.data[2].weather.description,        
+        iconurl3:data2.data[2].weather.icon,
+        description4: data2.data[3].weather.description,        
+        iconurl4:data2.data[3].weather.icon,
+        description5: data2.data[4].weather.description,        
+        iconurl5:data2.data[4].weather.icon,
+        description6: data2.data[5].weather.description,        
+        iconurl6:data2.data[5].weather.icon,
+        description7: data2.data[6].weather.description,        
+        iconurl7:data2.data[6].weather.icon,
         error: "",
         });
     }
