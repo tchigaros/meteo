@@ -26,7 +26,6 @@ class App extends React.Component {
     date7: undefined,
 
     description: undefined,
-    icona:undefined,
     iconurl:undefined,
     description1: undefined,
     iconurl1:undefined,
@@ -141,8 +140,7 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          icona:data3.weather[0].icon,
-          iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
+          iconurl:"https://openweathermap.org/img/wn/" + "@2x.png",
           error: "",
       });
 
@@ -161,8 +159,7 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          icona:data3.weather[0].icon,
-          iconurl:"https://openweathermap.org/img/wn/" + icona + "@2x.png",
+          iconurl:"https://openweathermap.org/img/wn/" + "@2x.png",
           error: "",
       });
 
@@ -320,7 +317,6 @@ class App extends React.Component {
         date7: undefined,
 
         description: undefined,
-        icona:undefined,
         iconurl:undefined,
         description1: undefined,
         iconurl1:undefined,
@@ -451,7 +447,6 @@ class App extends React.Component {
                     
 
                     description={this.state.description}
-                    icona={this.state.icona}
                     iconurl={this.state.iconurl}
                     description1={this.state.description1}
                     iconurl1={this.state.iconurl1}
