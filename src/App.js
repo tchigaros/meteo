@@ -157,7 +157,7 @@ class App extends React.Component {
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
           iconcode:data4.list[0].weather[0].icon,
-          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png",
+          iconurl:"http://openweathermap.org/img/w/" + ${iconcode} + ".png",
           error: "",
       });
 
@@ -177,7 +177,7 @@ class App extends React.Component {
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
           iconcode:data4.list[0].weather[0].icon,
-          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png",
+          iconurl:"http://openweathermap.org/img/w/" + ${iconcode} + ".png",
           error: "",
       });
 
@@ -331,6 +331,15 @@ class App extends React.Component {
         date5: undefined,
         date6: undefined,
         date7: undefined,
+        
+        iconcode: undefined,
+        iconcode1: undefined,
+        iconcode2: undefined,
+        iconcode3: undefined,
+        iconcode4: undefined,
+        iconcode5: undefined,
+        iconcode6: undefined,
+        iconcode7: undefined,
 
         description: undefined,
         iconurl:undefined,
@@ -420,7 +429,16 @@ class App extends React.Component {
                     date5={this.state.date5}
                     date6={this.state.date6}
                     date7={this.state.date7}
-                 
+      
+      
+                    iconcode={this.state.iconcode}
+                    iconcode1={this.state.iconcode1}
+                    iconcode2={this.state.iconcode2}
+                    iconcode3={this.state.iconcode3}
+                    iconcode4={this.state.iconcode4}
+                    iconcode5={this.state.iconcode5}
+                    iconcode6={this.state.iconcode6}
+                    iconcode7={this.state.iconcode7}
 
                     temperature={this.state.temperature}
 
