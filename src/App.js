@@ -136,7 +136,7 @@ class App extends React.Component {
           temperature_min: data3.main.temp_min,
           temperature_max: data3.main.temp_max,
          
-          wind_speed:data3.wind.speed + "km/h",
+          wind_speed:data3.wind.speed + " m/s",
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
@@ -155,7 +155,7 @@ class App extends React.Component {
           temperature_min: data3.main.temp_min,
           temperature_max: data3.main.temp_max,
          
-          wind_speed:data3.wind.speed + "mph",
+          wind_speed:data3.wind.speed + " mph",
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
@@ -205,13 +205,13 @@ class App extends React.Component {
         humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.data[0].wind_spd,
-        wind_speed2:data2.data[1].wind_spd,
-        wind_speed3:data2.data[2].wind_spd,
-        wind_speed4:data2.data[3].wind_spd,
-        wind_speed5:data2.data[4].wind_spd,
-        wind_speed6:data2.data[5].wind_spd,
-        wind_speed7:data2.data[6].wind_spd,
+        wind_speed1:data2.data[0].wind_spd.toPrecision(2),
+        wind_speed2:data2.data[1].wind_spd.toPrecision(2),
+        wind_speed3:data2.data[2].wind_spd.toPrecision(2),
+        wind_speed4:data2.data[3].wind_spd.toPrecision(2),
+        wind_speed5:data2.data[4].wind_spd.toPrecision(2),
+        wind_speed6:data2.data[5].wind_spd.toPrecision(2),
+        wind_speed7:data2.data[6].wind_spd.toPrecision(2),
   
 
       
@@ -276,13 +276,13 @@ class App extends React.Component {
         humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.data[0].wind_spd,
-        wind_speed2:data2.data[1].wind_spd,
-        wind_speed3:data2.data[2].wind_spd,
-        wind_speed4:data2.data[3].wind_spd,
-        wind_speed5:data2.data[4].wind_spd,
-        wind_speed6:data2.data[5].wind_spd,
-        wind_speed7:data2.data[6].wind_spd,
+        wind_speed1:data2.data[0].wind_spd.toPrecision(2),
+        wind_speed2:data2.data[1].wind_spd.toPrecision(2),
+        wind_speed3:data2.data[2].wind_spd.toPrecision(2),
+        wind_speed4:data2.data[3].wind_spd.toPrecision(2),
+        wind_speed5:data2.data[4].wind_spd.toPrecision(2),
+        wind_speed6:data2.data[5].wind_spd.toPrecision(2),
+        wind_speed7:data2.data[6].wind_spd.toPrecision(2),
   
 
       
