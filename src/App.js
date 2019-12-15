@@ -25,6 +25,15 @@ class App extends React.Component {
     date5: undefined,
     date6: undefined,
     date7: undefined,
+    
+    iconcode: undefined,
+    iconcode1: undefined,
+    iconcode2: undefined,
+    iconcode3: undefined,
+    iconcode4: undefined,
+    iconcode5: undefined,
+    iconcode6: undefined,
+    iconcode7: undefined,
 
     description: undefined,
     iconurl:undefined,
@@ -114,6 +123,11 @@ class App extends React.Component {
     //   const api_call = await fetch(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
     //  const data = await api_call.json();
     // };
+    
+
+    const api_call_4 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&appid=${API_KEY}&units=${units1}&lang=en`);
+    const data4 = await api_call_4.json();
+    
     const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units1}&lang=en`);
     const data3 = await api_call_.json();
 
@@ -142,7 +156,8 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          iconurl:data2.data[0].weather.icon,
+          iconcode:data4.list[0].weather[0].icon,
+          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png"
           error: "",
       });
 
@@ -161,7 +176,8 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          iconurl:data2.data[0].weather.icon,
+          iconcode:data4.list[0].weather[0].icon,
+          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png",
           error: "",
       });
 
@@ -215,8 +231,6 @@ class App extends React.Component {
         wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " m/s",
         wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " m/s",
   
-
-      
         description1: data2.data[0].weather.description,        
         iconurl1:data2.data[0].weather.icon,
         description2: data2.data[1].weather.description,        
