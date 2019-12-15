@@ -129,7 +129,7 @@ class App extends React.Component {
     // const data3 = await api_call2.json();
 
    // use the first data for weather informations
-    if (city && country && units==="metric" && type==="weather") {
+    if (city && country && units1==="metric" && type==="weather") {
       this.setState({
           city: data3.name,
           country: data3.sys.country,
@@ -148,7 +148,7 @@ class App extends React.Component {
 
       
     } 
-    else if (city && country && units==="imperial" && type==="weather") {
+    else if (city && country && units1==="imperial" && type==="weather") {
       this.setState({
           city: data3.name,
           country: data3.sys.country,
