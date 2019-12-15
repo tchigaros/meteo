@@ -99,11 +99,11 @@ class App extends React.Component {
     
      if (units==="M") {
       this.setState({
-        units1="metric"
+        units1: "metric"
       });
       else if (units==="I") {
       this.setState({
-        units1="imperial"
+        units1: "imperial"
       });
     
      
