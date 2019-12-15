@@ -4,19 +4,19 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/new_Weather";
 
+
 //app key for apixu : 81b709f9eb39487c9e330501192705
 const API_KEY = "ebb254aec4c1b763f1509526830d2c3c";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
 const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
 const API_KEY4 = "bdef63fe8e024f9b8043b9c4eed80457";//weatherbit
-
+const units1="metric";
 
 class App extends React.Component {
   state = {
 
     city: undefined,
     country: undefined,
-    units1:"metric",
     date: undefined,
     date1: undefined,
     date2: undefined,
@@ -98,9 +98,8 @@ class App extends React.Component {
     const type = e.target.elements.type.value;
     
     if (units==="I") {
-      this.setState({
-        units1: "imperial",
-      });
+        units1="imperial",
+      };
     
      
     // if (!city){
