@@ -157,7 +157,7 @@ class App extends React.Component {
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
           iconcode:data4.list[0].weather[0].icon,
-          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png"
+          iconurl:"http://openweathermap.org/img/w/" + iconcode + ".png",
           error: "",
       });
 
