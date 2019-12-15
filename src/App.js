@@ -95,6 +95,8 @@ class App extends React.Component {
     const country = e.target.elements.country.value;
     const units = e.target.elements.unity.value;
     const type = e.target.elements.type.value;
+    
+     
     // if (!city){
     //   const api_call = await fetch(`https://geoip-db.com/jsonp`);
     //  const data = await api_call.json();
@@ -112,10 +114,10 @@ class App extends React.Component {
     //   const api_call = await fetch(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
     //  const data = await api_call.json();
     // };
-    const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
+    const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&lang=en`);
     const data3 = await api_call_.json();
 
-    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY4}&lang=en`);
+    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY4}&units=${units}&lang=en`);
     const data2 = await api_call.json();
 
 
