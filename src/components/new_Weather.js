@@ -31,7 +31,7 @@ const Weather = props => (
 	     props.date && <th className="weather__key" >{ props.date }</th>
 	    }
 	     {
-	     props.description && <th className="weather__key" >{ props.description } <img src={images}/{props.iconurl}.png className="icondescription"></img></th>
+	     props.description && <th className="weather__key" >{ props.description } <img src={images.props.iconurl}.png className="icondescription"></img></th>
 	    }
 
 	    
@@ -58,7 +58,7 @@ const Weather = props => (
 	     props.date1 && <th className="weather__key" >{ props.date1 }</th>
 	    }
 	     {
-	     props.description1 && <th className="weather__key" >{ props.description1 } <img src={images}/{props.iconurl1}.png className="icondescription"></img></th>
+	     props.description1 && <th className="weather__key" >{ props.description1 } <img src={props.iconurl1} className="icondescription"></img></th>
 	    }
 
 	    
