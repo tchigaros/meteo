@@ -205,13 +205,13 @@ class App extends React.Component {
         humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.data[0].wind_spd.toPrecision(2),
-        wind_speed2:data2.data[1].wind_spd.toPrecision(2),
-        wind_speed3:data2.data[2].wind_spd.toPrecision(2),
-        wind_speed4:data2.data[3].wind_spd.toPrecision(2),
-        wind_speed5:data2.data[4].wind_spd.toPrecision(2),
-        wind_speed6:data2.data[5].wind_spd.toPrecision(2),
-        wind_speed7:data2.data[6].wind_spd.toPrecision(2),
+        wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " m/s",
+        wind_speed2:data2.data[1].wind_spd.toPrecision(2) + " m/s",
+        wind_speed3:data2.data[2].wind_spd.toPrecision(2) + " m/s",
+        wind_speed4:data2.data[3].wind_spd.toPrecision(2) + " m/s",
+        wind_speed5:data2.data[4].wind_spd.toPrecision(2) + " m/s",
+        wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " m/s",
+        wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " m/s",
   
 
       
@@ -276,13 +276,13 @@ class App extends React.Component {
         humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.data[0].wind_spd.toPrecision(2),
-        wind_speed2:data2.data[1].wind_spd.toPrecision(2),
-        wind_speed3:data2.data[2].wind_spd.toPrecision(2),
-        wind_speed4:data2.data[3].wind_spd.toPrecision(2),
-        wind_speed5:data2.data[4].wind_spd.toPrecision(2),
-        wind_speed6:data2.data[5].wind_spd.toPrecision(2),
-        wind_speed7:data2.data[6].wind_spd.toPrecision(2),
+        wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " m/s",
+        wind_speed2:data2.data[1].wind_spd.toPrecision(2) + " m/s",
+        wind_speed3:data2.data[2].wind_spd.toPrecision(2) + " m/s",
+        wind_speed4:data2.data[3].wind_spd.toPrecision(2) + " m/s",
+        wind_speed5:data2.data[4].wind_spd.toPrecision(2) + " m/s",
+        wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " m/s",
+        wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " m/s",
   
 
       
