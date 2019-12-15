@@ -96,12 +96,7 @@ class App extends React.Component {
     const country = e.target.elements.country.value;
     const units = e.target.elements.unity.value;
     const type = e.target.elements.type.value;
-    
-    if (units==="I") {
-        units1="imperial",
-      };
-    
-     
+   
     // if (!city){
     //   const api_call = await fetch(`https://geoip-db.com/jsonp`);
     //  const data = await api_call.json();
