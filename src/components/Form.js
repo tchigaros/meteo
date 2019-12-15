@@ -13,8 +13,8 @@ const Form = props => (
 		</p>
 		<p name="unities">
 		<label name="unity"> °C </label>
-		<label name="unity"> <input type="radio" className="radioButton" name="unity" value="M" placeholder="°C" defaultChecked />   </label>
-		<label name="unity"> <input type="radio" className="radioButton" name="unity" value="I" placeholder="F"/> </label>
+		<label name="unity"> <input type="radio" className="radioButton" name="unity" value="metric" placeholder="°C" defaultChecked />   </label>
+		<label name="unity"> <input type="radio" className="radioButton" name="unity" value="imperial" placeholder="F"/> </label>
 		<label name="unity">  F </label>
 		</p>
 		<button>Request</button>
