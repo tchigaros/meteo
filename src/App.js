@@ -166,7 +166,7 @@ class App extends React.Component {
       });
 
       // use the second data for forecat informations
-    }else if(city && country && units==="metric" && type==="forecast"){
+    }else if(city && country && units==="M" && type==="forecast"){
        this.setState({
         city: data2.city_name,
         country: data2.country_code,
@@ -237,7 +237,7 @@ class App extends React.Component {
         error: "",
         });
     }
-    else if(city && country && units==="imperial" && type==="forecast"){
+    else if(city && country && units==="I" && type==="forecast"){
        this.setState({
         city: data2.city_name,
         country: data2.country_code,
@@ -278,13 +278,13 @@ class App extends React.Component {
         humidity7: data2.data[6].rh,
 
       
-        wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " m/s",
-        wind_speed2:data2.data[1].wind_spd.toPrecision(2) + " m/s",
-        wind_speed3:data2.data[2].wind_spd.toPrecision(2) + " m/s",
-        wind_speed4:data2.data[3].wind_spd.toPrecision(2) + " m/s",
-        wind_speed5:data2.data[4].wind_spd.toPrecision(2) + " m/s",
-        wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " m/s",
-        wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " m/s",
+        wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " mph",
+        wind_speed2:data2.data[1].wind_spd.toPrecision(2) + " mph",
+        wind_speed3:data2.data[2].wind_spd.toPrecision(2) + " mph",
+        wind_speed4:data2.data[3].wind_spd.toPrecision(2) + " mph",
+        wind_speed5:data2.data[4].wind_spd.toPrecision(2) + " mph",
+        wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " mph",
+        wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " mph",
   
 
       
