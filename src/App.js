@@ -9,6 +9,7 @@ const API_KEY = "ebb254aec4c1b763f1509526830d2c3c";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
 const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
 const API_KEY4 = "bdef63fe8e024f9b8043b9c4eed80457";//weatherbit
+const units1="metric";
 
 class App extends React.Component {
   state = {
@@ -96,6 +97,15 @@ class App extends React.Component {
     const units = e.target.elements.unity.value;
     const type = e.target.elements.type.value;
     
+     if (units==="M") {
+      this.setState({
+        units1="metric"
+      });
+      else if (units==="I") {
+      this.setState({
+        units1="imperial"
+      });
+    
      
     // if (!city){
     //   const api_call = await fetch(`https://geoip-db.com/jsonp`);
@@ -114,7 +124,7 @@ class App extends React.Component {
     //   const api_call = await fetch(`http://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units}&lang=en`);
     //  const data = await api_call.json();
     // };
-    const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&lang=en`);
+    const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units1}&lang=en`);
     const data3 = await api_call_.json();
 
     const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY4}&lang=en&units=${units}`);
