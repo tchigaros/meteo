@@ -18,8 +18,8 @@ const Weather = props => (
   <tr id="toptable" Name="date_weather__info">
 	   <th>Date</th>
 	   <th>Conditions</th>
-	   <th>Temperature Min</th>
-	   <th>Temperature Max</th>
+	   <th>Min Temperature</th>
+	   <th>Max Temperature</th>
 	   <th>Humidity</th>
 	   <th>Wind </th>
   </tr>
