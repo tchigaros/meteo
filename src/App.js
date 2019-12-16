@@ -143,8 +143,9 @@ class App extends React.Component {
     // const data3 = await api_call2.json();
 
    // use the first data for weather informations
+    iconcode=data4.list[0].weather[0].icon;
     if (city && country && units1==="metric" && type==="weather") {
-      this.iconcode=data4.list[0].weather[0].icon;
+      
       this.setState({
           city: data3.name,
           country: data3.sys.country,
@@ -152,10 +153,10 @@ class App extends React.Component {
           temperature: data3.main.temp,
           temperature_min: data3.main.temp_min,
           temperature_max: data3.main.temp_max,
-         
           wind_speed:data3.wind.speed + " m/s",
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
+          iconcode=data4.list[0].weather[0].icon,
           iconurl:"https://openweathermap.org/img/w/" + iconcode +".png",
           error: "",
       });
@@ -163,7 +164,7 @@ class App extends React.Component {
       
     } 
     else if (city && country && units1==="imperial" && type==="weather") {
-      this.iconcode=data4.list[0].weather[0].icon;
+
       this.setState({
           city: data3.name,
           country: data3.sys.country,
@@ -176,7 +177,7 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-       
+          iconcode:data4.list[0].weather[0].icon,
           iconurl:"https://openweathermap.org/img/w/" + iconcode +".png",
           error: "",
       });
