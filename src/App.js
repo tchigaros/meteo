@@ -156,7 +156,7 @@ class App extends React.Component {
           wind_speed:data3.wind.speed + " m/s",
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
-          iconcode:data4.list[0].weather[0].icon,
+          iconcode: data4.list[0].weather[0].icon,
           iconurl:"http://openweathermap.org/img/w/04d.png",
           error: "",
       });
@@ -177,7 +177,7 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          iconcode:data4.list[0].weather[0].icon,
+          iconcode: data4.list[0].weather[0].icon,
           iconurl:"http://openweathermap.org/img/w/04d.png",
           error: "",
       });
