@@ -144,6 +144,7 @@ class App extends React.Component {
 
    // use the first data for weather informations
     if (city && country && units1==="metric" && type==="weather") {
+      iconcode:data4.list[0].weather[0].icon,
       this.setState({
           city: data3.name,
           country: data3.sys.country,
@@ -156,8 +157,7 @@ class App extends React.Component {
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
-          iconcode:data4.list[0].weather[0].icon,
-          iconurl:"https://openweathermap.org/img/w/" + this.iconcode +".png",
+          iconurl:"https://openweathermap.org/img/w/" + iconcode +".png",
           error: "",
       });
 
