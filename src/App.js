@@ -144,7 +144,7 @@ class App extends React.Component {
 
    // use the first data for weather informations
     if (city && country && units1==="metric" && type==="weather") {
-      iconcode=data4.list[0].weather[0].icon;
+      this.iconcode=data4.list[0].weather[0].icon;
       this.setState({
           city: data3.name,
           country: data3.sys.country,
@@ -163,7 +163,7 @@ class App extends React.Component {
       
     } 
     else if (city && country && units1==="imperial" && type==="weather") {
-         iconcode=data4.list[0].weather[0].icon;
+      this.iconcode=data4.list[0].weather[0].icon;
       this.setState({
           city: data3.name,
           country: data3.sys.country,
