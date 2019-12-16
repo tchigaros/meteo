@@ -143,7 +143,7 @@ class App extends React.Component {
     // const data3 = await api_call2.json();
 
    // use the first data for weather informations
-    iconcode=data4.list[0].weather[0].icon;
+
     if (city && country && units1==="metric" && type==="weather") {
       
       this.setState({
@@ -156,7 +156,7 @@ class App extends React.Component {
           wind_speed:data3.wind.speed + " m/s",
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
-          iconcode=data4.list[0].weather[0].icon,
+          iconcode:data4.list[0].weather[0].icon,
           iconurl:"https://openweathermap.org/img/w/" + iconcode +".png",
           error: "",
       });
