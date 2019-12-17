@@ -232,6 +232,15 @@ class App extends React.Component {
         wind_speed5:data2.data[4].wind_spd.toPrecision(2) + " m/s",
         wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " m/s",
         wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " m/s",
+         
+        iconcode: data4.list[0].weather[0].icon,
+        iconcode1: data4.list[1].weather[0].icon,
+        iconcode2: data4.list[2].weather[0].icon,
+        iconcode3: data4.list[3].weather[0].icon,
+        iconcode4: data4.list[4].weather[0].icon,
+        iconcode5: data4.list[5].weather[0].icon,
+        iconcode6: data4.list[6].weather[0].icon,
+        iconcode7: data4.list[7].weather[0].icon,
   
         description1: data2.data[0].weather.description,        
         iconurl1:data2.data[0].weather.icon,
@@ -302,6 +311,14 @@ class App extends React.Component {
         wind_speed6:data2.data[5].wind_spd.toPrecision(2) + " mph",
         wind_speed7:data2.data[6].wind_spd.toPrecision(2) + " mph",
   
+        iconcode: data4.list[0].weather[0].icon,
+        iconcode1: data4.list[1].weather[0].icon,
+        iconcode2: data4.list[2].weather[0].icon,
+        iconcode3: data4.list[3].weather[0].icon,
+        iconcode4: data4.list[4].weather[0].icon,
+        iconcode5: data4.list[5].weather[0].icon,
+        iconcode6: data4.list[6].weather[0].icon,
+        iconcode7: data4.list[7].weather[0].icon,
 
       
         description1: data2.data[0].weather.description,        
