@@ -44,7 +44,7 @@ const Weather = props => (
 	     props.humidity && <th className="weather__key" >{ props.humidity } </th>
 	    }
 	    {
-	     props.wind_speed && <th className="weather__key" >{  props.wind_dir + props.wind_speed }</th>
+	     props.wind_speed && <th className="weather__key" >{  props.wind_dir + "  " + props.wind_speed }</th>
 	    } 
   
   </tr>
@@ -71,7 +71,7 @@ const Weather = props => (
 	     props.humidity1 && <th className="weather__key" >{ props.humidity1 } </th>
 	    }
 	    {
-	     props.wind_speed1 && <th className="weather__key" >{  props.wind_dir1 + props.wind_speed1 }</th>
+	     props.wind_speed1 && <th className="weather__key" >{ props.wind_dir1 + "  " + props.wind_speed1 }</th>
 	    } 
   
   </tr>
@@ -96,7 +96,7 @@ const Weather = props => (
 	     props.humidity2 && <th className="weather__key" >{ props.humidity2 } </th>
 	    }
 	    {
-	     props.wind_speed2 && <th className="weather__key" >{ props.wind_speed2 }</th>
+	     props.wind_speed2 && <th className="weather__key" >{ props.wind_dir2 + "  " + props.wind_speed2 }</th>
 	    } 
   
   </tr>
@@ -121,7 +121,7 @@ const Weather = props => (
 	     props.humidity3 && <th className="weather__key" >{ props.humidity3} </th>
 	    }
 	    {
-	     props.wind_speed3 && <th className="weather__key" >{ props.wind_speed3 }</th>
+	     props.wind_speed3 && <th className="weather__key" >{ props.wind_dir3 + "  " + props.wind_speed3 }</th>
 	    } 
   
   </tr>
@@ -146,7 +146,7 @@ const Weather = props => (
 	     props.humidity4 && <th className="weather__key" >{ props.humidity4 } </th>
 	    }
 	    {
-	     props.wind_speed4 && <th className="weather__key" >{ props.wind_speed4 }</th>
+	     props.wind_speed4 && <th className="weather__key" >{ props.wind_dir4 + "  " + props.wind_speed4 }</th>
 	    } 
   
   </tr>
@@ -171,7 +171,7 @@ const Weather = props => (
 	     props.humidity5 && <th className="weather__key" >{ props.humidity5 } </th>
 	    }
 	    {
-	     props.wind_speed5 && <th className="weather__key" >{ props.wind_speed5 }</th>
+	     props.wind_speed5 && <th className="weather__key" >{ props.wind_dir5 + "  " + props.wind_speed5 }</th>
 	    } 
   
   </tr>
@@ -196,7 +196,7 @@ const Weather = props => (
 	     props.humidity6 && <th className="weather__key" >{ props.humidity6 } </th>
 	    }
 	    {
-	     props.wind_speed6 && <th className="weather__key" >{ props.wind_speed6 }</th>
+	     props.wind_speed6 && <th className="weather__key" >{ props.wind_dir6 + "  " + props.wind_speed6 }</th>
 	    } 
   
   </tr>
@@ -221,7 +221,7 @@ const Weather = props => (
 	     props.humidity7 && <th className="weather__key" >{ props.humidity7 } </th>
 	    }
 	    {
-	     props.wind_speed7 && <th className="weather__key" >{ props.wind_speed7 }</th>
+	     props.wind_speed7 && <th className="weather__key" >{ props.wind_dir7 + "  " + props.wind_speed7 }</th>
 	    } 
   
   </tr>
