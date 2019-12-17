@@ -98,7 +98,7 @@ class App extends React.Component {
     wind_dir3: undefined,
     wind_dir4: undefined,
     wind_dir5: undefined,
-    wind_dird6: undefined,
+    wind_dir6: undefined,
     wind_dir7: undefined,
  
         
@@ -241,7 +241,7 @@ class App extends React.Component {
         wind_dir3: data2.data[3].wind_cdir,
         wind_dir4: data2.data[4].wind_cdir,
         wind_dir5: data2.data[5].wind_cdir,
-        wind_dird6: data2.data[6].wind_cdir,
+        wind_dir6: data2.data[6].wind_cdir,
         wind_dir7: data2.data[7].wind_cdir,
 
         wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " m/s",
@@ -320,6 +320,15 @@ class App extends React.Component {
         humidity5: data2.data[4].rh,
         humidity6: data2.data[5].rh,
         humidity7: data2.data[6].rh,
+         
+        wind_dir: data2.data[0].wind_cdir,
+        wind_dir1: data2.data[1].wind_cdir,
+        wind_dir2: data2.data[2].wind_cdir,
+        wind_dir3: data2.data[3].wind_cdir,
+        wind_dir4: data2.data[4].wind_cdir,
+        wind_dir5: data2.data[5].wind_cdir,
+        wind_dir6: data2.data[6].wind_cdir,
+        wind_dir7: data2.data[7].wind_cdir,
 
       
         wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " mph",
@@ -425,6 +434,15 @@ class App extends React.Component {
         humidity6: undefined,
         humidity7: undefined,
         
+        wind_dir: undefined,
+        wind_dir1: undefined,
+        wind_dir2: undefined,
+        wind_dir3: undefined,
+        wind_dir4: undefined,
+        wind_dir5: undefined,
+        wind_dir6: undefined,
+        wind_dir7: undefined,
+
 
         wind_speed: undefined,
         wind_speed1: undefined,
@@ -506,7 +524,15 @@ class App extends React.Component {
                     humidity5={this.state.humidity5}
                     humidity6={this.state.humidity6}
                     humidity7={this.state.humidity7}
-          
+                      
+                    wind_dir={this.state.wind_dir}
+                    wind_dir1={this.state.wind_dir1}
+                    wind_dir2={this.state.wind_dir2}
+                    wind_dir3={this.state.wind_dir3}
+                    wind_dir4={this.state.wind_dir4}
+                    wind_dir5={this.state.wind_dir5}
+                    wind_dir6={this.state.wind_dir6}
+                    wind_dir7={this.state.wind_dir7}
 
                     wind_speed={this.state.wind_speed}
                     wind_speed1={this.state.wind_speed1}
