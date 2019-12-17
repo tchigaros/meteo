@@ -57,7 +57,7 @@ const Weather = props => (
 	     props.date1 && <th className="weather__key" >{ props.date1 }</th>
 	    }
 	     {
-	     props.description1 && <th className="weather__key" >{ props.description1 } <img src={props.iconurl1} className="icondescription"></img></th>
+	     props.description1 && <th className="weather__key" >{ props.description1 } <img src={"https://openweathermap.org/img/w/" + props.iconcode1 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
