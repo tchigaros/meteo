@@ -91,6 +91,15 @@ class App extends React.Component {
     wind_speed5: undefined,
     wind_speed6: undefined,
     wind_speed7: undefined,
+    
+    wind_dir: undefined,
+    wind_dir1: undefined,
+    wind_dir2: undefined,
+    wind_dir3: undefined,
+    wind_dir4: undefined,
+    wind_dir5: undefined,
+    wind_dird6: undefined,
+    wind_dir7: undefined,
  
         
     error: undefined
@@ -131,7 +140,7 @@ class App extends React.Component {
     const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units1}&lang=en`);
     const data3 = await api_call_.json();
 
-    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city},${country}&key=${API_KEY4}&lang=en&units=${units}`);
+    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY4}&lang=en&units=${units}`);
     const data2 = await api_call.json();
 
 
@@ -154,6 +163,7 @@ class App extends React.Component {
           temperature_min: data3.main.temp_min,
           temperature_max: data3.main.temp_max,
           wind_speed:data3.wind.speed + " m/s",
+        
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
@@ -175,6 +185,7 @@ class App extends React.Component {
           temperature_max: data3.main.temp_max,
          
           wind_speed:data3.wind.speed + " mph",
+        
           humidity: data3.main.humidity,
           pressure: data3.main.pressure,
           description: data3.weather[0].description,
@@ -223,8 +234,16 @@ class App extends React.Component {
         humidity5: data2.data[4].rh,
         humidity6: data2.data[5].rh,
         humidity7: data2.data[6].rh,
+        
+        wind_dir: data2.data[0].wind_cdir,
+        wind_dir1: data2.data[1].wind_cdir,
+        wind_dir2: data2.data[2].wind_cdir,
+        wind_dir3: data2.data[3].wind_cdir,
+        wind_dir4: data2.data[4].wind_cdir,
+        wind_dir5: data2.data[5].wind_cdir,
+        wind_dird6: data2.data[6].wind_cdir,
+        wind_dir7: data2.data[7].wind_cdir,
 
-      
         wind_speed1:data2.data[0].wind_spd.toPrecision(2) + " m/s",
         wind_speed2:data2.data[1].wind_spd.toPrecision(2) + " m/s",
         wind_speed3:data2.data[2].wind_spd.toPrecision(2) + " m/s",
