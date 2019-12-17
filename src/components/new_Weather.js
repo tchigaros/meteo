@@ -82,7 +82,7 @@ const Weather = props => (
 	     props.date2 && <th className="weather__key" >{ props.date2 }</th>
 	    }
 	     {
-	     props.description2 && <th className="weather__key" >{ props.description2 } <img src={props.iconurl2} className="icondescription"></img></th>
+	     props.description2 && <th className="weather__key" >{ props.description2 } <img src={"https://openweathermap.org/img/w/" + props.iconcode2 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -107,7 +107,7 @@ const Weather = props => (
 	     props.date3 && <th className="weather__key" >{ props.date3 }</th>
 	    }
 	     {
-	     props.description3 && <th className="weather__key" >{ props.description3 } <img src={props.iconurl3} className="icondescription"></img></th>
+	     props.description3 && <th className="weather__key" >{ props.description3 } <img src={"https://openweathermap.org/img/w/" + props.iconcode3 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -132,7 +132,7 @@ const Weather = props => (
 	     props.date4 && <th className="weather__key" >{ props.date4 }</th>
 	    }
 	     {
-	     props.description4 && <th className="weather__key" >{ props.description4 } <img src={props.iconurl4} className="icondescription"></img></th>
+	     props.description4 && <th className="weather__key" >{ props.description4 } <img src={"https://openweathermap.org/img/w/" + props.iconcode4 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -157,7 +157,7 @@ const Weather = props => (
 	     props.date5 && <th className="weather__key" >{ props.date5 }</th>
 	    }
 	     {
-	     props.description5 && <th className="weather__key" >{ props.description5 } <img src={props.iconurl2} className="icondescription"></img></th>
+	     props.description5 && <th className="weather__key" >{ props.description5 } <img src={"https://openweathermap.org/img/w/" + props.iconcode5 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -182,7 +182,7 @@ const Weather = props => (
 	     props.date6 && <th className="weather__key" >{ props.date6 }</th>
 	    }
 	     {
-	     props.description6 && <th className="weather__key" >{ props.description6 } <img src={props.iconurl6} className="icondescription"></img></th>
+	     props.description6 && <th className="weather__key" >{ props.description6 } <img src={"https://openweathermap.org/img/w/" + props.iconcode6 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -207,7 +207,7 @@ const Weather = props => (
 	     props.date7 && <th className="weather__key" >{ props.date7 }</th>
 	    }
 	     {
-	     props.description7 && <th className="weather__key" >{ props.description7 } <img src={props.iconurl7} className="icondescription"></img></th>
+	     props.description7 && <th className="weather__key" >{ props.description7 } <img src={"https://openweathermap.org/img/w/" + props.iconcode7 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
