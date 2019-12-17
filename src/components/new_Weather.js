@@ -30,7 +30,7 @@ const Weather = props => (
 	     props.date && <th className="weather__key" >{ props.date }</th>
 	    }
 	     {
-	     props.description && <th className="weather__key" >{ props.description} <img src={"https://openweathermap.org/img/w/" + props.iconcode + ".png"} size="(max-width: 60px) 100vw, 60px"  className="icondescription"></img></th>
+	     props.description && <th className="weather__key" >{ props.description} <img src={"https://openweathermap.org/img/w/" + props.iconcode + ".png"}  className="icondescription"></img></th>
 	    }
 
 	    
@@ -107,7 +107,7 @@ const Weather = props => (
 	     props.date3 && <th className="weather__key" >{ props.date3 }</th>
 	    }
 	     {
-	     props.description3 && <th className="weather__key" >{ props.description3 } <img src={"https://openweathermap.org/img/w/" + props.iconcode3 + ".png"} className="icondescription"></img></th>
+	     props.description3 && <th className="weather__key" >{ props.description3 } <img src={"https://www.weatherbit.io/static/img/icons/" + props.iconurl3 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -132,7 +132,7 @@ const Weather = props => (
 	     props.date4 && <th className="weather__key" >{ props.date4 }</th>
 	    }
 	     {
-	     props.description4 && <th className="weather__key" >{ props.description4 } <img src={"https://openweathermap.org/img/w/" + props.iconcode4 + ".png"} className="icondescription"></img></th>
+	     props.description4 && <th className="weather__key" >{ props.description4 } <img src={"https://www.weatherbit.io/static/img/icons/" + props.iconurl4 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -157,7 +157,7 @@ const Weather = props => (
 	     props.date5 && <th className="weather__key" >{ props.date5 }</th>
 	    }
 	     {
-	     props.description5 && <th className="weather__key" >{ props.description5 } <img src={"https://openweathermap.org/img/w/" + props.iconcode5 + ".png"} className="icondescription"></img></th>
+	     props.description5 && <th className="weather__key" >{ props.description5 } <img src={"https://www.weatherbit.io/static/img/icons/" + props.iconurl5 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -182,7 +182,7 @@ const Weather = props => (
 	     props.date6 && <th className="weather__key" >{ props.date6 }</th>
 	    }
 	     {
-	     props.description6 && <th className="weather__key" >{ props.description6 } <img src={"https://openweathermap.org/img/w/" + props.iconcode6 + ".png"} className="icondescription"></img></th>
+	     props.description6 && <th className="weather__key" >{ props.description6 } <img src={"https://www.weatherbit.io/static/img/icons/" + props.iconurl6 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
@@ -207,7 +207,7 @@ const Weather = props => (
 	     props.date7 && <th className="weather__key" >{ props.date7 }</th>
 	    }
 	     {
-	     props.description7 && <th className="weather__key" >{ props.description7 } <img src={"https://openweathermap.org/img/w/" + props.iconcode7 + ".png"} className="icondescription"></img></th>
+	     props.description7 && <th className="weather__key" >{ props.description7 } <img src={"https://www.weatherbit.io/static/img/icons/" + props.iconurl7 + ".png"} className="icondescription"></img></th>
 	    }
 
 	    
