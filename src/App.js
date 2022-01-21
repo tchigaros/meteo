@@ -6,7 +6,7 @@ import Weather from "./components/new_Weather";
 
 
 //app key for apixu : 81b709f9eb39487c9e330501192705
-const API_KEY = "ebb254aec4c1b763f1509526830d2c3c";
+const API_KEY = "d9330037f552adc8efe878df695d48d8";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
 const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
 const API_KEY4 = "5384ba63478c4552b766a078c6865291";//weatherbit
