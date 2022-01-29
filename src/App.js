@@ -144,7 +144,7 @@ class App extends React.Component {
     const api_call_ = await fetch(`https://api.openweathermap.org/data/2.5/${type}?q=${city},${country}&appid=${API_KEY}&units=${units1}&lang=en`);
     const data3 = await api_call_.json();
 
-    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY4}&lang=en&units=${units}`);
+    const api_call = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=5384ba63478c4552b766a078c6865291&lang=en&units=${units}`);
     const data2 = await api_call.json();
 
 
