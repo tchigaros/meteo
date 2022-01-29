@@ -6,6 +6,10 @@ import Weather from "./components/new_Weather";
 
 
 //app key for apixu : 81b709f9eb39487c9e330501192705
+//https://api.openweathermap.org/data/2.5/forecast?q=BENI%20MELLAL,MOROCCO&appid=ebb254aec4c1b763f1509526830d2c3c&units=metric&lang=en
+//working link :https://api.openweathermap.org/data/2.5/forecast?q=casablanca,morocco&units=metric&appid=d9330037f552adc8efe878df695d48d8
+//to acces to tmax : data3["list"][1]["main"]["temp_max"]
+
 const API_KEY = "d9330037f552adc8efe878df695d48d8";
 const API_KEY2 = "81b709f9eb39487c9e330501192705";
 const API_KEY3 = "0e78f553451605f46f7ff221c60af7ad";
@@ -199,33 +203,54 @@ class App extends React.Component {
        this.setState({
         city: data2.city_name,
         country: data2.country_code,
-
-        date1:data2.data[0].valid_date.substring(8,10),
-        date2:data2.data[1].valid_date.substring(8,10),
-        date3:data2.data[2].valid_date.substring(8,10),
-        date4:data2.data[3].valid_date.substring(8,10),
-        date5:data2.data[4].valid_date.substring(8,10),
-        date6:data2.data[5].valid_date.substring(8,10),
-        date7:data2.data[6].valid_date.substring(8,10),
+//new date extract :
+      date1:data3["list"][0]["dt"],
+      date2:data3["list"][1]["dt"],
+      date3:data3["list"][2]["dt"],
+      date4:data3["list"][3]["dt"],
+      date5:data3["list"][4]["dt"],
+      date6:data3["list"][5]["dt"],
+      date7:data3["list"][6]["dt"],
+      
+       // date1:data2.data[0].valid_date.substring(8,10),
+        //date2:data2.data[1].valid_date.substring(8,10),
+        //date3:data2.data[2].valid_date.substring(8,10),
+        //date4:data2.data[3].valid_date.substring(8,10),
+        //date5:data2.data[4].valid_date.substring(8,10),
+        //date6:data2.data[5].valid_date.substring(8,10),
+        //date7:data2.data[6].valid_date.substring(8,10),
         
+      temperature: data3["list"][0]["main"]["temp"]
+        //temperature: data2.data[0].temp,
 
-        temperature: data2.data[0].temp,
-
-
-        temperature_max1: data2.data[0].max_temp,
-        temperature_min1: data2.data[0].min_temp,
-        temperature_max2: data2.data[1].max_temp,
-        temperature_min2: data2.data[1].min_temp,
-        temperature_max3: data2.data[2].max_temp,
-        temperature_min3: data2.data[2].min_temp,
-        temperature_max4: data2.data[3].max_temp,
-        temperature_min4: data2.data[3].min_temp,
-        temperature_max5: data2.data[4].max_temp,
-        temperature_min5: data2.data[4].min_temp,
-        temperature_max6: data2.data[5].max_temp,
-        temperature_min6: data2.data[5].min_temp,
-        temperature_max7: data2.data[6].max_temp,
-        temperature_min7: data2.data[6].min_temp,
+         temperature_max1: data3["list"][0]["main"]["temp_max"],
+         temperature_min1: data3["list"][0]["main"]["temp_min"],
+         temperature_max2: data3["list"][1]["main"]["temp_max"],
+         temperature_min2: data3["list"][1]["main"]["temp_min"],
+         temperature_max3: data3["list"][2]["main"]["temp_max"],
+         temperature_min3: data3["list"][2]["main"]["temp_min"],
+         temperature_max4: data3["list"][3]["main"]["temp_max"],
+         temperature_min4: data3["list"][3]["main"]["temp_min"],
+         temperature_max5: data3["list"][4]["main"]["temp_max"],
+         temperature_min5: data3["list"][4]["main"]["temp_min"],
+         temperature_max6: data3["list"][5]["main"]["temp_max"],
+         temperature_min6: data3["list"][5]["main"]["temp_min"],
+         temperature_max7: data3["list"][6]["main"]["temp_max"],
+         temperature_min7: data3["list"][6]["main"]["temp_min"],
+        //temperature_max1: data2.data[0].max_temp,
+        //temperature_min1: data2.data[0].min_temp,
+        //temperature_max2: data2.data[1].max_temp,
+        //temperature_min2: data2.data[1].min_temp,
+        //temperature_max3: data2.data[2].max_temp,
+        //temperature_min3: data2.data[2].min_temp,
+        //temperature_max4: data2.data[3].max_temp,
+        //temperature_min4: data2.data[3].min_temp,
+        //temperature_max5: data2.data[4].max_temp,
+        //temperature_min5: data2.data[4].min_temp,
+        //temperature_max6: data2.data[5].max_temp,
+        //temperature_min6: data2.data[5].min_temp,
+        //temperature_max7: data2.data[6].max_temp,
+        //temperature_min7: data2.data[6].min_temp,
 
         humidity1: data2.data[0].rh,
         humidity2: data2.data[1].rh,
